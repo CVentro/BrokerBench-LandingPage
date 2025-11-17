@@ -18,5 +18,6 @@ jobs:
           host: ${{ secrets.HOST }}
           user: ${{ secrets.USERNAME }}
           private_key: ${{ secrets.PRIVATE_KEY }}
+          host_fingerprint: ${{ secrets.HOST_FINGERPRINT }}
           command:
             "cd /root/BrokerBench-LandingPage && git pull origin main && npm install && npm run build && cp -r dist/* /var/www/brokerbench/  && sudo systemctl reload caddy"
