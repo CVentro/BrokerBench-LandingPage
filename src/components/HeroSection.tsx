@@ -13,7 +13,7 @@ const HeroSection = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-primary/30 glow-primary">
             <Terminal className="w-4 h-4 text-primary" />
             <span className="text-sm font-mono text-muted-foreground">
-              Open Source • Developer-First • Cloud Native
+              Developer-First • Cloud Native
             </span>
           </div>
 
