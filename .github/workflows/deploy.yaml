@@ -1,23 +1,29 @@
 name: BrokerBench Landing Page Deployment
 
+
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Run Remote Command Via SSH
-        uses: D3rHase/ssh-command-action@latest
+      - name: Run remote deploy script
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
-          user: ${{ secrets.USERNAME }}
-          private_key: ${{ secrets.PRIVATE_KEY }}
-          host_fingerprint: "ignore"
-          command:
-            "cd /root/BrokerBench-LandingPage && git pull origin main && npm install && npm run build && cp -r dist/* /var/www/brokerbench/  && sudo systemctl reload caddy"
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /root/BrokerBench-LandingPage
+            git pull origin main
+            npm install
+            npm run build
+            cp -r dist/* /var/www/brokerbench/
+            systemctl reload caddy
