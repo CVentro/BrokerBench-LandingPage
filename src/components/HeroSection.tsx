@@ -6,14 +6,14 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10 opacity-50" />
-      
+
       <div className="container max-w-6xl mx-auto relative z-10">
         <div className="text-center space-y-8 animate-fade-in">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-primary/30 glow-primary">
             <Terminal className="w-4 h-4 text-primary" />
             <span className="text-sm font-mono text-muted-foreground">
-              Developer-First • Cloud Native
+              Developer-First • Cloud Native • Open Source
             </span>
           </div>
 
@@ -26,9 +26,11 @@ const HeroSection = () => {
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-            CLI-based load testing for Apache Kafka, RabbitMQ, Pulsar, and Redis Streams.
+            CLI-based load testing for Apache Kafka, RabbitMQ, Pulsar, and Redis
+            Streams.
             <br />
-            Auto-generate performance dashboards and compare brokers side-by-side.
+            Auto-generate performance dashboards and compare brokers
+            side-by-side.
           </p>
 
           {/* Terminal preview */}
@@ -38,7 +40,9 @@ const HeroSection = () => {
                 <div className="w-3 h-3 rounded-full bg-destructive" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500" />
                 <div className="w-3 h-3 rounded-full bg-green-500" />
-                <span className="ml-2 text-xs text-muted-foreground font-mono">terminal</span>
+                <span className="ml-2 text-xs text-muted-foreground font-mono">
+                  terminal
+                </span>
               </div>
               <div className="p-6 font-mono text-sm space-y-2">
                 <div className="flex items-center gap-2">
@@ -48,13 +52,16 @@ const HeroSection = () => {
                   </span>
                 </div>
                 <div className="text-muted-foreground">
-                  <span className="text-green-500">✓</span> Connected to Kafka cluster
+                  <span className="text-green-500">✓</span> Connected to Kafka
+                  cluster
                 </div>
                 <div className="text-muted-foreground">
-                  <span className="text-primary animate-glow-pulse">▸</span> Running benchmark...
+                  <span className="text-primary animate-glow-pulse">▸</span>{" "}
+                  Running benchmark...
                 </div>
                 <div className="text-muted-foreground">
-                  Throughput: <span className="text-primary">12,450</span> msg/sec
+                  Throughput: <span className="text-primary">12,450</span>{" "}
+                  msg/sec
                 </div>
                 <div className="text-muted-foreground">
                   Latency (p99): <span className="text-accent">23ms</span>
@@ -77,7 +84,9 @@ const HeroSection = () => {
           <div className="pt-4">
             <p className="text-sm text-muted-foreground mb-2">Quick install:</p>
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-card rounded-lg border border-border">
-              <code className="font-mono text-primary">npm install -g brokerbench</code>
+              <code className="font-mono text-primary">
+                npm install -g brokerbench
+              </code>
             </div>
           </div>
         </div>
