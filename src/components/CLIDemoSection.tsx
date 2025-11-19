@@ -2,13 +2,10 @@ import { Terminal } from "lucide-react";
 
 const CLIDemoSection = () => {
   const commands = [
-    { prompt: "$ brokerbench run --broker kafka --requests 10000", delay: 0 },
+    { prompt: "$ brokerbenchcli --broker KAFKA --requests 10000", delay: 0 },
     { text: "✓ Connected to Kafka cluster", delay: 1 },
     { text: "▸ Publishing 10,000 messages...", delay: 2 },
     { text: "✓ Benchmark complete", delay: 3 },
-    { text: "Throughput: 12,450 msg/sec", delay: 4 },
-    { text: "Latency (p50): 12ms | (p99): 23ms", delay: 5 },
-    { text: "✓ Dashboard generated: ./reports/kafka-benchmark.html", delay: 6 },
   ];
 
   return (
@@ -28,7 +25,9 @@ const CLIDemoSection = () => {
           <div className="bg-terminal-bg rounded-lg border border-primary/30 glow-primary overflow-hidden">
             <div className="flex items-center gap-2 px-6 py-4 border-b border-border/50 bg-card/50">
               <Terminal className="w-4 h-4 text-primary" />
-              <span className="text-sm font-mono text-muted-foreground">brokerbench-demo</span>
+              <span className="text-sm font-mono text-muted-foreground">
+                brokerbenchcli
+              </span>
             </div>
             <div className="p-8 font-mono text-sm space-y-3">
               {commands.map((cmd, index) => (

@@ -10,7 +10,7 @@ const DashboardSection = () => {
             <span className="text-gradient"> at a glance</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Auto-generated dashboards with side-by-side broker comparisons
+            Auto-generated dashboards with broker comparisons
           </p>
         </div>
 
@@ -19,15 +19,21 @@ const DashboardSection = () => {
           <Card className="p-6 bg-card border-gradient hover:glow-primary transition-all">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <h3 className="text-xl font-semibold text-primary">Apache Kafka</h3>
-                <span className="text-sm text-muted-foreground font-mono">10,000 messages</span>
+                <h3 className="text-xl font-semibold text-primary">
+                  Apache Kafka
+                </h3>
+                <span className="text-sm text-muted-foreground font-mono">
+                  10,000 messages
+                </span>
               </div>
-              
+
               <div className="space-y-3">
                 <div className="space-y-1">
                   <div className="flex justify-between text-sm">
                     <span className="text-muted-foreground">Throughput</span>
-                    <span className="text-primary font-mono">12,450 msg/sec</span>
+                    <span className="text-primary font-mono">
+                      12,450 msg/sec
+                    </span>
                   </div>
                   <div className="h-2 bg-secondary rounded-full overflow-hidden">
                     <div className="h-full bg-gradient-to-r from-primary to-accent w-[95%]" />
@@ -62,9 +68,11 @@ const DashboardSection = () => {
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-semibold text-accent">RabbitMQ</h3>
-                <span className="text-sm text-muted-foreground font-mono">10,000 messages</span>
+                <span className="text-sm text-muted-foreground font-mono">
+                  10,000 messages
+                </span>
               </div>
-              
+
               <div className="space-y-3">
                 <div className="space-y-1">
                   <div className="flex justify-between text-sm">
@@ -99,10 +107,6 @@ const DashboardSection = () => {
             </div>
           </Card>
         </div>
-
-        <p className="text-center text-muted-foreground mt-8">
-          Export results as HTML, JSON, or CSV for further analysis
-        </p>
       </div>
     </section>
   );

@@ -13,7 +13,7 @@ const HeroSection = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-primary/30 glow-primary">
             <Terminal className="w-4 h-4 text-primary" />
             <span className="text-sm font-mono text-muted-foreground">
-              Developer-First • Cloud Native • Open Source
+              Developer-First • Cloud Native
             </span>
           </div>
 
@@ -48,7 +48,7 @@ const HeroSection = () => {
                 <div className="flex items-center gap-2">
                   <span className="text-terminal-prompt">$</span>
                   <span className="text-terminal-text">
-                    brokerbench run --broker kafka --requests 10000
+                    brokerbenchcli --broker KFAKA --requests 10000
                   </span>
                 </div>
                 <div className="text-muted-foreground">
@@ -58,13 +58,6 @@ const HeroSection = () => {
                 <div className="text-muted-foreground">
                   <span className="text-primary animate-glow-pulse">▸</span>{" "}
                   Running benchmark...
-                </div>
-                <div className="text-muted-foreground">
-                  Throughput: <span className="text-primary">12,450</span>{" "}
-                  msg/sec
-                </div>
-                <div className="text-muted-foreground">
-                  Latency (p99): <span className="text-accent">23ms</span>
                 </div>
               </div>
             </div>
@@ -85,7 +78,7 @@ const HeroSection = () => {
             <p className="text-sm text-muted-foreground mb-2">Quick install:</p>
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-card rounded-lg border border-border">
               <code className="font-mono text-primary">
-                npm install -g brokerbench
+                npm install -g brokerbenchcli
               </code>
             </div>
           </div>

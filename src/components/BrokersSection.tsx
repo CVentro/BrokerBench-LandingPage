@@ -1,8 +1,26 @@
 const brokers = [
-  { name: "Apache Kafka", color: "text-primary" },
-  { name: "RabbitMQ", color: "text-accent" },
-  { name: "Apache Pulsar", color: "text-primary" },
-  { name: "Redis Streams", color: "text-accent" },
+  {
+    name: "Apache Kafka",
+    color: "text-primary",
+    image:
+      "https://openwhisk.apache.org/images/icons/icon-kafka-white-trans.png",
+  },
+  {
+    name: "RabbitMQ",
+    color: "text-accent",
+    image:
+      "https://cdn.iconscout.com/icon/free/png-256/free-rabbitmq-icon-svg-download-png-282296.png?f=webp",
+  },
+  {
+    name: "Apache Pulsar",
+    color: "text-primary",
+    image: "https://www.netdata.cloud/img/pulsar.svg",
+  },
+  {
+    name: "Redis Streams",
+    color: "text-accent",
+    image: "https://www.svgrepo.com/show/303460/redis-logo.svg",
+  },
 ];
 
 const BrokersSection = () => {
@@ -23,9 +41,19 @@ const BrokersSection = () => {
               className="p-8 rounded-lg bg-card border border-border hover:border-primary/50 hover:glow-primary transition-all duration-300 group"
             >
               <div className="aspect-square flex items-center justify-center mb-4">
-                <div className={`text-6xl font-bold ${broker.color} opacity-80 group-hover:opacity-100 transition-opacity`}>
-                  {broker.name.charAt(0)}
-                </div>
+                {broker.image ? (
+                  <img
+                    src={broker.image}
+                    alt={broker.name}
+                    className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                  />
+                ) : (
+                  <div
+                    className={`text-6xl font-bold ${broker.color} opacity-80 group-hover:opacity-100 transition-opacity`}
+                  >
+                    {broker.name.charAt(0)}
+                  </div>
+                )}
               </div>
               <h3 className="font-semibold text-lg">{broker.name}</h3>
             </div>
