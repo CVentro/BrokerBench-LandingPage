@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Terminal } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -65,11 +66,13 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-            <Button variant="hero" size="lg" className="text-lg px-8">
-              Get Started
+            <Button variant="hero" size="lg" className="text-lg px-8" asChild>
+              <Link to="/docs">Get Started</Link>
             </Button>
-            <Button variant="outline-hero" size="lg" className="text-lg px-8">
-              View on GitHub
+            <Button variant="outline-hero" size="lg" className="text-lg px-8" asChild>
+              <a href="https://github.com/CVentro" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+              </a>
             </Button>
           </div>
 

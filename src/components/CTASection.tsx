@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github, BookOpen, Download } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
@@ -17,21 +18,28 @@ const CTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="hero" size="lg" className="text-lg px-8 gap-2">
-              <Download className="w-5 h-5" />
-              Get Started
-            </Button>
             <Button
-              variant="outline-hero"
+              variant="hero"
               size="lg"
               className="text-lg px-8 gap-2"
+              asChild
             >
-              <Github className="w-5 h-5" />
-              View on GitHub
+              <Link to="/docs">
+                <Download className="w-5 h-5" />
+                Get Started
+              </Link>
             </Button>
-            <Button variant="ghost" size="lg" className="text-lg px-8 gap-2">
-              <BookOpen className="w-5 h-5" />
-              Documentation
+
+            <Button
+              variant="ghost"
+              size="lg"
+              className="text-lg px-8 gap-2"
+              asChild
+            >
+              <Link to="/docs">
+                <BookOpen className="w-5 h-5" />
+                Read Docs
+              </Link>
             </Button>
           </div>
 
