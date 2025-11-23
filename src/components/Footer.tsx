@@ -25,43 +25,6 @@ const Footer = () => {
           </div>
 
           {/* Links */}
-          <div className="space-y-4">
-            <h4 className="font-semibold">Resources</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  href="/docs"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  API Reference
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Examples
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Contributing
-                </a>
-              </li>
-            </ul>
-          </div>
 
           {/* Community */}
           <div className="space-y-4">
