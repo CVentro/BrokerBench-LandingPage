@@ -27,7 +27,7 @@ const HeroSection = () => {
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-            CLI-based load testing for Apache Kafka, RabbitMQ, Pulsar, and Redis
+            CLI-based load testing for Apache Kafka, RabbitMQ, and Redis
             Streams.
             <br />
             Auto-generate performance dashboards and compare brokers
@@ -69,8 +69,17 @@ const HeroSection = () => {
             <Button variant="hero" size="lg" className="text-lg px-8" asChild>
               <Link to="/docs">Get Started</Link>
             </Button>
-            <Button variant="outline-hero" size="lg" className="text-lg px-8" asChild>
-              <a href="https://github.com/CVentro" target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="outline-hero"
+              size="lg"
+              className="text-lg px-8"
+              asChild
+            >
+              <a
+                href="https://github.com/CVentro"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 View on GitHub
               </a>
             </Button>

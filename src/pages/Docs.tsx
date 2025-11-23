@@ -183,7 +183,7 @@ const Docs = () => {
                           --broker(-b)
                         </code>
                         <span className="text-muted-foreground">
-                          Broker type: KAFKA, RABBITMQ, PULSAR, REDIS (required)
+                          Broker type: KAFKA, RABBITMQ, REDIS (required)
                         </span>
                       </div>
                       <div className="flex gap-4">
@@ -207,7 +207,7 @@ const Docs = () => {
                           --loops(-l)
                         </code>
                         <span className="text-muted-foreground">
-                          Number of loops to repeat the test (default: 1)
+                          Number of loops to repeat the test (default: 5)
                         </span>
                       </div>
                       <div className="flex gap-4">
@@ -216,7 +216,7 @@ const Docs = () => {
                         </code>
                         <span className="text-muted-foreground">
                           Ramp-up time in milliseconds between message batches
-                          (default = 5)
+                          (default: 20)
                         </span>
                       </div>
                       <div className="flex gap-4">
@@ -249,7 +249,8 @@ const Docs = () => {
 
                     <div className="bg-terminal-bg rounded-lg border border-primary/20 p-4 font-mono text-sm">
                       <span className="text-terminal-text">
-                        brokerbenchcli dashboard &lt;result.json&gt; --port 3000
+                        Your dashboards are ready! Dashboard URL:
+                        http://localhost:3000
                       </span>
                     </div>
                   </div>
@@ -333,20 +334,6 @@ const Docs = () => {
                     </div>
                   </div> */}
 
-                  {/* Custom Payload */}
-                  <div className="bg-card rounded-lg border border-border p-6">
-                    <h3 className="text-xl font-semibold mb-4">
-                      Custom Payload Size (Coming Soon)
-                    </h3>
-                    <div className="bg-terminal-bg rounded-lg border border-primary/20 p-4 font-mono text-sm">
-                      <span className="text-terminal-prompt">$</span>{" "}
-                      <span className="text-terminal-text">
-                        brokerbenchcli --broker PULSAR --requests 5000 --payload
-                        4096
-                      </span>
-                    </div>
-                  </div>
-
                   {/* Multiple Brokers Comparison */}
                   {/* <div className="bg-card rounded-lg border border-border p-6">
                     <h3 className="text-xl font-semibold mb-4">
@@ -386,13 +373,27 @@ const Docs = () => {
                       <div>
                         <span className="text-terminal-prompt">$</span>{" "}
                         <span className="text-terminal-text">
-                          brokerbenchli dashboard --port 3000
+                          Your dashboards are ready!
                         </span>
                       </div>
                       <div className="text-muted-foreground">
                         <span className="text-green-500">✓</span> Dashboard
                         available at http://localhost:3000
                       </div>
+                    </div>
+                  </div>
+
+                  {/* Custom Payload */}
+                  <div className="bg-card rounded-lg border border-border p-6">
+                    <h3 className="text-xl font-semibold mb-4">
+                      Custom Payload Size (Coming Soon)
+                    </h3>
+                    <div className="bg-terminal-bg rounded-lg border border-primary/20 p-4 font-mono text-sm">
+                      <span className="text-terminal-prompt">$</span>{" "}
+                      <span className="text-terminal-text">
+                        brokerbenchcli --broker PULSAR --requests 5000 --payload
+                        4096
+                      </span>
                     </div>
                   </div>
                 </div>

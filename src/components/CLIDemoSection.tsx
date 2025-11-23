@@ -2,10 +2,16 @@ import { Terminal } from "lucide-react";
 
 const CLIDemoSection = () => {
   const commands = [
-    { prompt: "$ brokerbenchcli --broker KAFKA --requests 10000", delay: 0 },
-    { text: "✓ Connected to Kafka cluster", delay: 1 },
-    { text: "▸ Publishing 10,000 messages...", delay: 2 },
-    { text: "✓ Benchmark complete", delay: 3 },
+    {
+      prompt: "$ brokerbenchcli --broker KAFKA --requests 1000 --rampup 30",
+      delay: 0,
+    },
+    { text: "✓ ===== BrokerBench Test Started =====", delay: 1 },
+    { text: "▸ Broker     : KAFKA", delay: 2 },
+    { text: "▸ Requests   : 100", delay: 2 },
+    { text: "▸ Loops      : 5", delay: 2 },
+    { text: "▸ Ramp-up    : 30 seconds", delay: 2 },
+    { text: "✓ Your dashboards are ready!", delay: 3 },
   ];
 
   return (

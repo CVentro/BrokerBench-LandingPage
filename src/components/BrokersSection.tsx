@@ -11,11 +11,7 @@ const brokers = [
     image:
       "https://cdn.iconscout.com/icon/free/png-256/free-rabbitmq-icon-svg-download-png-282296.png?f=webp",
   },
-  {
-    name: "Apache Pulsar",
-    color: "text-primary",
-    image: "https://www.netdata.cloud/img/pulsar.svg",
-  },
+
   {
     name: "Redis Streams",
     color: "text-accent",
@@ -34,7 +30,7 @@ const BrokersSection = () => {
           Test and compare performance across different broker technologies
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
           {brokers.map((broker, index) => (
             <div
               key={index}

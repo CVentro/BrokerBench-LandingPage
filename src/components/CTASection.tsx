@@ -13,8 +13,7 @@ const CTASection = () => {
           </h2>
 
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Install BrokerBench and start testing in seconds. Works with Docker
-            or runs natively on any platform.
+            Install BrokerBench and start testing in seconds.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

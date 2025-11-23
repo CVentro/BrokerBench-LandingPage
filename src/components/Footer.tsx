@@ -30,7 +30,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="#"
+                  href="/docs"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Documentation
@@ -78,27 +78,11 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://x.com/CVentroEngg"
                   className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2"
                 >
                   <Twitter className="w-4 h-4" />
                   Twitter
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Discord
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Discussions
                 </a>
               </li>
             </ul>
