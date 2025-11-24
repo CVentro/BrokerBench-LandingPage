@@ -1,10 +1,20 @@
 import { Card } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const DashboardSection = () => {
+  const titleAnimation = useScrollAnimation({ threshold: 0.2 });
+  const kafkaAnimation = useScrollAnimation({ threshold: 0.1 });
+  const rabbitAnimation = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <section className="py-24 px-6 bg-card/30">
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div
+          ref={titleAnimation.ref}
+          className={`text-center mb-16 animate-on-scroll ${
+            titleAnimation.isVisible ? "visible" : ""
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Compare performance
             <span className="text-gradient"> at a glance</span>
@@ -16,16 +26,22 @@ const DashboardSection = () => {
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* Kafka Dashboard Mock */}
-          <Card className="p-6 bg-card border-gradient hover:glow-primary transition-all">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <h3 className="text-xl font-semibold text-primary">
-                  Apache Kafka
-                </h3>
-                <span className="text-sm text-muted-foreground font-mono">
-                  10,000 messages
-                </span>
-              </div>
+          <div
+            ref={kafkaAnimation.ref}
+            className={`animate-on-scroll-left ${
+              kafkaAnimation.isVisible ? "visible" : ""
+            }`}
+          >
+            <Card className="p-6 bg-card border-gradient hover:glow-primary transition-all">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl font-semibold text-primary">
+                    Apache Kafka
+                  </h3>
+                  <span className="text-sm text-muted-foreground font-mono">
+                    10,000 messages
+                  </span>
+                </div>
 
               <div className="space-y-3">
                 <div className="space-y-1">
@@ -61,17 +77,24 @@ const DashboardSection = () => {
                 </div>
               </div>
             </div>
-          </Card>
+            </Card>
+          </div>
 
           {/* RabbitMQ Dashboard Mock */}
-          <Card className="p-6 bg-card border-gradient hover:glow-accent transition-all">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <h3 className="text-xl font-semibold text-accent">RabbitMQ</h3>
-                <span className="text-sm text-muted-foreground font-mono">
-                  10,000 messages
-                </span>
-              </div>
+          <div
+            ref={rabbitAnimation.ref}
+            className={`animate-on-scroll-right ${
+              rabbitAnimation.isVisible ? "visible" : ""
+            }`}
+          >
+            <Card className="p-6 bg-card border-gradient hover:glow-accent transition-all">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl font-semibold text-accent">RabbitMQ</h3>
+                  <span className="text-sm text-muted-foreground font-mono">
+                    10,000 messages
+                  </span>
+                </div>
 
               <div className="space-y-3">
                 <div className="space-y-1">
@@ -105,7 +128,8 @@ const DashboardSection = () => {
                 </div>
               </div>
             </div>
-          </Card>
+            </Card>
+          </div>
         </div>
       </div>
     </section>

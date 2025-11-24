@@ -5,6 +5,7 @@ import CLIDemoSection from "@/components/CLIDemoSection";
 import DashboardSection from "@/components/DashboardSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import FloatingCTA from "@/components/FloatingCTA";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <DashboardSection />
       <CTASection />
       <Footer />
+      <FloatingCTA />
     </div>
   );
 };

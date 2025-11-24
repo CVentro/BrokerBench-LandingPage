@@ -1,6 +1,10 @@
 import { Terminal } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const CLIDemoSection = () => {
+  const titleAnimation = useScrollAnimation({ threshold: 0.2 });
+  const terminalAnimation = useScrollAnimation({ threshold: 0.1 });
+
   const commands = [
     {
       prompt: "$ brokerbenchcli --broker KAFKA --requests 1000 --rampup 30",
@@ -17,7 +21,12 @@ const CLIDemoSection = () => {
   return (
     <section className="py-24 px-6">
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-12">
+        <div
+          ref={titleAnimation.ref}
+          className={`text-center mb-12 animate-on-scroll ${
+            titleAnimation.isVisible ? "visible" : ""
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Simple CLI,
             <span className="text-gradient"> powerful insights</span>
@@ -27,7 +36,12 @@ const CLIDemoSection = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div
+          ref={terminalAnimation.ref}
+          className={`max-w-4xl mx-auto animate-on-scroll-scale ${
+            terminalAnimation.isVisible ? "visible" : ""
+          }`}
+        >
           <div className="bg-terminal-bg rounded-lg border border-primary/30 glow-primary overflow-hidden">
             <div className="flex items-center gap-2 px-6 py-4 border-b border-border/50 bg-card/50">
               <Terminal className="w-4 h-4 text-primary" />

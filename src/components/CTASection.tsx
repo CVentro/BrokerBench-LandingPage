@@ -1,12 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Github, BookOpen, Download } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const CTASection = () => {
+  const ctaAnimation = useScrollAnimation({ threshold: 0.3 });
+
   return (
     <section className="py-24 px-6">
       <div className="container max-w-4xl mx-auto text-center">
-        <div className="space-y-8 p-12 rounded-2xl bg-gradient-to-br from-primary/10 via-background to-accent/10 border border-primary/20 glow-primary">
+        <div
+          ref={ctaAnimation.ref}
+          className={`space-y-8 p-12 rounded-2xl bg-gradient-to-br from-primary/10 via-background to-accent/10 border border-primary/20 glow-primary animate-on-scroll-scale ${
+            ctaAnimation.isVisible ? "visible" : ""
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold">
             Ready to benchmark
             <span className="text-gradient"> your message brokers?</span>

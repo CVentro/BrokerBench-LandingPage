@@ -49,7 +49,7 @@ const HeroSection = () => {
                 <div className="flex items-center gap-2">
                   <span className="text-terminal-prompt">$</span>
                   <span className="text-terminal-text">
-                    brokerbenchcli --broker KFAKA --requests 10000
+                    brokerbenchcli --broker KAFKA --requests 10000
                   </span>
                 </div>
                 <div className="text-muted-foreground">

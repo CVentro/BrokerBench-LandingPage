@@ -101,6 +101,16 @@ export default {
             width: "100%",
           },
         },
+        "slide-up": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(20px) translateX(20px) scale(0.9)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0) translateX(0) scale(1)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -108,6 +118,7 @@ export default {
         "fade-in": "fade-in 0.5s ease-out",
         "glow-pulse": "glow-pulse 2s ease-in-out infinite",
         "typing": "typing 3s steps(40) infinite",
+        "slide-up": "slide-up 0.5s ease-out",
       },
     },
   },
