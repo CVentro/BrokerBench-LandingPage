@@ -1,5 +1,6 @@
 import { Zap, BarChart3, GitCompare, Wrench } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const features = [
   {
@@ -29,10 +30,18 @@ const features = [
 ];
 
 const FeaturesSection = () => {
+  const titleAnimation = useScrollAnimation({ threshold: 0.2 });
+  const gridAnimation = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <section className="py-24 px-6 relative">
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
+        <div
+          ref={titleAnimation.ref}
+          className={`text-center mb-16 space-y-4 animate-on-scroll ${
+            titleAnimation.isVisible ? "visible" : ""
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold">
             Everything you need to
             <span className="text-gradient"> benchmark message brokers</span>
@@ -42,11 +51,18 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div
+          ref={gridAnimation.ref}
+          className={`grid md:grid-cols-2 gap-6 animate-on-scroll ${
+            gridAnimation.isVisible ? "visible" : ""
+          }`}
+          style={{ transitionDelay: "0.2s" }}
+        >
           {features.map((feature, index) => (
             <Card
               key={index}
               className="p-8 bg-card border-gradient hover:glow-primary transition-all duration-300 group"
+              style={{ transitionDelay: `${0.3 + index * 0.1}s` }}
             >
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-lg bg-primary/10 border border-primary/20 group-hover:glow-primary transition-all">
